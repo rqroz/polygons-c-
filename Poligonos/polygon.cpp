@@ -47,18 +47,18 @@ void Polygon::addPoint(){
     }
 }
 
-void Polygon::addPoints(int n){
+void Polygon::addPoints(const int n){
     for(int i=0; (i < n) && (i < this->size); ++i){
         cout << "Ponto " << this->counter + 1 << ": ";
         this->addPoint();
     }
 }
 
-void Polygon::translate(Point pt){
+void Polygon::translate(Point &pt){
     this->translate(pt.getX(), pt.getY());
 }
 
-void Polygon::translate(float x, float y){
+void Polygon::translate(const float x, const float y){
     for(int i=0; i < this->counter; ++i){
         (this->points + i)->translate(x, y);
     }

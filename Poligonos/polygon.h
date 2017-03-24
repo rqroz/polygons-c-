@@ -22,10 +22,10 @@ public:
 
     bool canAddPoint();
     void addPoint();
-    void addPoints(int);
+    void addPoints(const int);
 
-    void translate(Point);
-    void translate(float, float);
+    void translate(Point&);
+    void translate(const float, const float);
 
     double area();
 
