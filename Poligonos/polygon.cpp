@@ -1,6 +1,8 @@
 #include "polygon.h"
 #include "point.h"
 #include <iostream>
+#include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -11,37 +13,21 @@ Polygon::Polygon(){
         cout <<"Informe o número de vértices: ";
         cin >> n;
         if(n < 3 || n > this->MAX_SIZE)
-            cout << "O número de vértices deve ser um inteiro entre 3 e 100!\n";
+            cout << "O número de vértices deve ser um inteiro entre 3 e " << this->MAX_SIZE << "!\n";
     }while(n < 3 || n > this->MAX_SIZE);
-
-    cout << "\nsizeof Point: " << sizeof(Point) << "\nsizeof int: " << sizeof(int) << "\n\n";
-    this->points = (Point *) calloc(this->size, sizeof(Point));
-    this->ints = (int *) calloc(this->size, sizeof(int));
     this->size = n;
 }
 
 int Polygon::getSize(){
-    return this->size;
-}
-
-int Polygon::getCounter(){
-    return this->counter;
-}
-
-Point* Polygon::getPoints(){
-    return this->points;
-}
-
-bool Polygon::canAddPoint(){
-    return counter < size;
+    return this->points.size();
 }
 
 void Polygon::addPoint(){
-    if(this->canAddPoint()){
-        *(this->points + this->counter) = Point();
-        cin >> *(this->points + this->counter);
-
-        this->counter++;
+    int remaining_size = this->size - this->points.size();
+    if(remaining_size > 0){
+        Point tmp;
+        cin >> tmp;
+        this->points.push_back(tmp);
     }else{
         cout << "Polígono já está completo...\n";
     }
@@ -49,7 +35,7 @@ void Polygon::addPoint(){
 
 void Polygon::addPoints(const int n){
     for(int i=0; (i < n) && (i < this->size); ++i){
-        cout << "Ponto " << this->counter + 1 << ": ";
+        cout << "Ponto " << i + 1 << ": ";
         this->addPoint();
     }
 }
@@ -59,61 +45,64 @@ void Polygon::translate(Point &pt){
 }
 
 void Polygon::translate(const float x, const float y){
-    for(int i=0; i < this->counter; ++i){
-        (this->points + i)->translate(x, y);
+    for(unsigned int i=0; i < this->points.size(); ++i){
+        this->points[i].translate(x, y);
+    }
+}
+
+void Polygon::rotate(const float rad, Point p){
+    float s = sin(rad);
+    float c = cos(rad);
+
+    for(unsigned int i = 0; i<this->points.size(); ++i){
+        //translate point back to origin
+        float xzero = this->points[i].getX() - p.getX();
+        float yzero = this->points[i].getY() - p.getY();
+
+        // rotate point
+        float xnew = xzero * c - yzero * s;
+        float ynew = xzero * s + yzero * c;
+
+        //set point to xnew translated back
+        this->points[i].setX(xnew + p.getX());
+        this->points[i].setY(ynew + p.getY());
     }
 }
 
 double Polygon::area(){
     double sumDP = 0, sumDS = 0;
+    int counter = this->points.size();
+    for(int i=0; i < counter; ++i){
+        Point tmp = this->points[i%counter];
+        Point nextTmp = this->points[(i+1)%counter];
 
-    for(int i=0; i < this->counter; ++i){
-        Point tmp = *(this->points + i%counter);
-        Point nextTmp = *(this->points + (i+1)%counter);
         sumDP += tmp.getX() * nextTmp.getY();
         sumDS += tmp.getY() * nextTmp.getX();
     }
-    cout << "sumDP: " << sumDP << "\nsumDS: " << sumDS << "\n";
-    return (sumDP - sumDS)/2;
+
+    return abs(sumDP - sumDS)/2;
 }
 
-
-Polygon::~Polygon(){
-//    free(this->points);
-}
+Polygon::~Polygon(){}
 
 
 /* Friend functions (operators overloading) */
-
 istream& operator >> (istream& is, Polygon& p){
-    int n, remaining = p.size - p.counter;
-    if(remaining > 0){
-        cout << "Quantos pontos você deseja adicionar? ";
-        do{
-            cin >> n;
-            if(n < 1 || n > remaining){
-                cout << "Por favor, informe um número entre 1 e " << remaining << "...\n";
-            }
-        }while(n < 1 || n > remaining);
-
-        p.addPoints(n);
-    }else{
-        cout << "Polígono já está completo...\n";
-    }
-
+    p.points.clear();
+    cout << "p size: " << p.size << endl;
+    p.addPoints(p.size);
     return is;
 }
 
 ostream& operator << (ostream& os, const Polygon& p){
-    if(p.counter == 0){
+    if(p.points.size() == 0){
         os << "O polígono ainda não foi preenchido...\n";
     }else{
-        for(int i=0; i < p.counter; ++i){
-            os << *(p.points + i) << " -> ";
+        int size = p.points.size();
+        for(int i=0; i <= size; ++i){
+            os << p.points[i%size];
+            if(i != size) cout << " -> ";
         }
-
-        if(p.counter > 2)
-            os << *(p.points);
     }
     os << "\n";
     return os;

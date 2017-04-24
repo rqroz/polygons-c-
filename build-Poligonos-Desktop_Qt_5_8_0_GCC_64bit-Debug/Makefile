@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Poligonos1.0.0
-DISTDIR = /root/Desktop/prog/build-Poligonos-Desktop_Qt_5_8_0_GCC_64bit-Debug/.tmp/Poligonos1.0.0
+DISTDIR = /home/rod/Desktop/build-Poligonos-Desktop_Qt_5_8_0_GCC_64bit-Debug/.tmp/Poligonos1.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS)  
@@ -204,7 +204,6 @@ DIST          = /opt/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
-		../Poligonos/.qmake.stash \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -383,7 +382,6 @@ Makefile: ../Poligonos/Poligonos.pro /opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.
 		/opt/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -549,7 +547,6 @@ Makefile: ../Poligonos/Poligonos.pro /opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.
 /opt/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 /opt/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf:
@@ -607,8 +604,7 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../Poligonos/main.cpp ../Poligonos/point.h \
-		../Poligonos/polygon.h
+main.o: ../Poligonos/main.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Poligonos/main.cpp
 
 point.o: ../Poligonos/point.cpp ../Poligonos/point.h
