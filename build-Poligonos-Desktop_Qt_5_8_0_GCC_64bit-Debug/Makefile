@@ -50,10 +50,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../Poligonos/main.cpp \
 		../Poligonos/point.cpp \
-		../Poligonos/polygon.cpp 
+		../Poligonos/polygon.cpp \
+		../Poligonos/rectangle.cpp 
 OBJECTS       = main.o \
 		point.o \
-		polygon.o
+		polygon.o \
+		rectangle.o
 DIST          = /opt/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/common/unix.conf \
 		/opt/Qt/5.8/gcc_64/mkspecs/common/linux.conf \
@@ -204,6 +206,7 @@ DIST          = /opt/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
+		../Poligonos/.qmake.stash \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -218,9 +221,11 @@ DIST          = /opt/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/lex.prf \
 		../Poligonos/Poligonos.pro point.h \
-		polygon.h ../Poligonos/main.cpp \
+		polygon.h \
+		rectangle.h ../Poligonos/main.cpp \
 		../Poligonos/point.cpp \
-		../Poligonos/polygon.cpp
+		../Poligonos/polygon.cpp \
+		../Poligonos/rectangle.cpp
 QMAKE_TARGET  = Poligonos
 DESTDIR       = 
 TARGET        = Poligonos
@@ -382,6 +387,7 @@ Makefile: ../Poligonos/Poligonos.pro /opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.
 		/opt/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -547,6 +553,7 @@ Makefile: ../Poligonos/Poligonos.pro /opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.
 /opt/Qt/5.8/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt/5.8/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt/5.8/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt/5.8/gcc_64/mkspecs/features/default_pre.prf:
@@ -604,7 +611,8 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../Poligonos/main.cpp 
+main.o: ../Poligonos/main.cpp ../Poligonos/point.h \
+		../Poligonos/polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Poligonos/main.cpp
 
 point.o: ../Poligonos/point.cpp ../Poligonos/point.h
@@ -613,6 +621,11 @@ point.o: ../Poligonos/point.cpp ../Poligonos/point.h
 polygon.o: ../Poligonos/polygon.cpp ../Poligonos/polygon.h \
 		../Poligonos/point.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o polygon.o ../Poligonos/polygon.cpp
+
+rectangle.o: ../Poligonos/rectangle.cpp ../Poligonos/polygon.h \
+		../Poligonos/point.h \
+		../Poligonos/rectangle.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rectangle.o ../Poligonos/rectangle.cpp
 
 ####### Install
 

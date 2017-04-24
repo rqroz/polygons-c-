@@ -5,8 +5,10 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     point.cpp \
-    polygon.cpp
+    polygon.cpp \
+    rectangle.cpp
 
 HEADERS += \
     point.h \
-    polygon.h
+    polygon.h \
+    rectangle.h
