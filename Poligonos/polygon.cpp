@@ -43,9 +43,9 @@ void Polygon::translate(const float x, const float y){
     }
 }
 
-void Polygon::rotate(const float rad, Point p){
-    float s = sin(rad);
-    float c = cos(rad);
+void Polygon::rotate(const float degrees, Point p){
+    float s = sin(degrees);
+    float c = cos(degrees);
 
     for(unsigned int i = 0; i<this->points.size(); ++i){
         //translate point back to origin
@@ -91,9 +91,6 @@ Point Polygon::center(){
 
     return Point(xSum/den, ySum/den);
 }
-
-Polygon::~Polygon(){}
-
 
 /* Friend functions (operators overloading) */
 istream& operator >> (istream& is, Polygon& p){

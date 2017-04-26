@@ -1,0 +1,162 @@
+\hypertarget{class_point}{}\section{Point Class Reference}
+\label{class_point}\index{Point@{Point}}
+
+
+Classe utilizada para representar um ponto em um plano 2D.  
+
+
+
+
+{\ttfamily \#include $<$point.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\hyperlink{class_point_a2bb66002bdd155f2e20ae8e1e55f5c97}{Point} (const float, const float)
+\begin{DoxyCompactList}\small\item\em Construtor alternativo. \end{DoxyCompactList}\item 
+double \hyperlink{class_point_a8de35a6098cdd7267b4167776da83da6}{getX} ()
+\item 
+double \hyperlink{class_point_aa278c8bcb8aeb4101023a4baf473b547}{getY} ()
+\item 
+void \hyperlink{class_point_a61253b28283b54a9cf379132bdff3006}{setX} (float)
+\item 
+void \hyperlink{class_point_a0a9d3529888cd2fd7c0adb8e46702110}{setY} (float)
+\item 
+void \hyperlink{class_point_ae456513d2af9dec336514a94e350a386}{set\+XY} (float, float)
+\item 
+float \hyperlink{class_point_af6595756d7687bf3a324227cbbe2a531}{abs} ()
+\item 
+float \hyperlink{class_point_a91600d1914ae912e8d9fb9da62feb1bd}{distance} (const \hyperlink{class_point}{Point} \&)
+\item 
+void \hyperlink{class_point_a2b103de4d519cd01c9864167e12d2c7f}{translate} (const float, const float)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_point_ab99c56589bc8ad5fa5071387110a5bc7}{x}
+\item 
+double \hyperlink{class_point_afa38be143ae800e6ad69ce8ed4df62d8}{y}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_point_a39769dc77d3fa4d361db4ed5822510d6}\label{class_point_a39769dc77d3fa4d361db4ed5822510d6}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{class_point}{Point} \&)
+\item 
+\mbox{\Hypertarget{class_point_a1a8476a65036945b3fa49c2b6789264e}\label{class_point_a1a8476a65036945b3fa49c2b6789264e}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{class_point}{Point} \&)
+\item 
+\mbox{\Hypertarget{class_point_a4832a8cf1853edeea25376cb501be7e2}\label{class_point_a4832a8cf1853edeea25376cb501be7e2}} 
+bool {\bfseries operator==} (const \hyperlink{class_point}{Point} \&, const \hyperlink{class_point}{Point} \&)
+\item 
+\mbox{\Hypertarget{class_point_a379ea470d116d5ec7858c3b1c88051fa}\label{class_point_a379ea470d116d5ec7858c3b1c88051fa}} 
+\hyperlink{class_point}{Point} {\bfseries operator+} (const \hyperlink{class_point}{Point} \&, const \hyperlink{class_point}{Point} \&)
+\item 
+\mbox{\Hypertarget{class_point_adc0ae410968ebfcac79ebcf9d4eb3f5b}\label{class_point_adc0ae410968ebfcac79ebcf9d4eb3f5b}} 
+\hyperlink{class_point}{Point} {\bfseries operator-\/} (const \hyperlink{class_point}{Point} \&, const \hyperlink{class_point}{Point} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe utilizada para representar um ponto em um plano 2D. 
+
+\begin{DoxyDate}{Date}
+Abril, 2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_ad92f2337b839a94ce97dcdb439b4325a}\label{class_point_ad92f2337b839a94ce97dcdb439b4325a}} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. 
+
+Define os valores iniciais de x e y como sendo 0. \mbox{\Hypertarget{class_point_a2bb66002bdd155f2e20ae8e1e55f5c97}\label{class_point_a2bb66002bdd155f2e20ae8e1e55f5c97}} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{const float}]{x,  }\item[{const float}]{y }\end{DoxyParamCaption})}
+
+
+
+Construtor alternativo. 
+
+Define os valores iniciais de x e y de acordo com os parâmetros recebidos. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_point_af6595756d7687bf3a324227cbbe2a531}\label{class_point_af6595756d7687bf3a324227cbbe2a531}} 
+\index{Point@{Point}!abs@{abs}}
+\index{abs@{abs}!Point@{Point}}
+\subsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily float Point\+::abs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna a distância do ponto ao centro do sistema de coordenadas. \mbox{\Hypertarget{class_point_a91600d1914ae912e8d9fb9da62feb1bd}\label{class_point_a91600d1914ae912e8d9fb9da62feb1bd}} 
+\index{Point@{Point}!distance@{distance}}
+\index{distance@{distance}!Point@{Point}}
+\subsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily float Point\+::distance (\begin{DoxyParamCaption}\item[{const \hyperlink{class_point}{Point} \&}]{p }\end{DoxyParamCaption})}
+
+Retorna a distância em relação à outro ponto p. \mbox{\Hypertarget{class_point_a8de35a6098cdd7267b4167776da83da6}\label{class_point_a8de35a6098cdd7267b4167776da83da6}} 
+\index{Point@{Point}!getX@{getX}}
+\index{getX@{getX}!Point@{Point}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily double Point\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o valor da coordenada x. \mbox{\Hypertarget{class_point_aa278c8bcb8aeb4101023a4baf473b547}\label{class_point_aa278c8bcb8aeb4101023a4baf473b547}} 
+\index{Point@{Point}!getY@{getY}}
+\index{getY@{getY}!Point@{Point}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily double Point\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o valor da coordenada y. \mbox{\Hypertarget{class_point_a61253b28283b54a9cf379132bdff3006}\label{class_point_a61253b28283b54a9cf379132bdff3006}} 
+\index{Point@{Point}!setX@{setX}}
+\index{setX@{setX}!Point@{Point}}
+\subsubsection{\texorpdfstring{set\+X()}{setX()}}
+{\footnotesize\ttfamily void Point\+::setX (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+Define o valor da coordenada x. \mbox{\Hypertarget{class_point_ae456513d2af9dec336514a94e350a386}\label{class_point_ae456513d2af9dec336514a94e350a386}} 
+\index{Point@{Point}!set\+XY@{set\+XY}}
+\index{set\+XY@{set\+XY}!Point@{Point}}
+\subsubsection{\texorpdfstring{set\+X\+Y()}{setXY()}}
+{\footnotesize\ttfamily void Point\+::set\+XY (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+Define o valor das coordenadas x e y. \mbox{\Hypertarget{class_point_a0a9d3529888cd2fd7c0adb8e46702110}\label{class_point_a0a9d3529888cd2fd7c0adb8e46702110}} 
+\index{Point@{Point}!setY@{setY}}
+\index{setY@{setY}!Point@{Point}}
+\subsubsection{\texorpdfstring{set\+Y()}{setY()}}
+{\footnotesize\ttfamily void Point\+::setY (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})}
+
+Define o valor da coordenada x. \mbox{\Hypertarget{class_point_a2b103de4d519cd01c9864167e12d2c7f}\label{class_point_a2b103de4d519cd01c9864167e12d2c7f}} 
+\index{Point@{Point}!translate@{translate}}
+\index{translate@{translate}!Point@{Point}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void Point\+::translate (\begin{DoxyParamCaption}\item[{const float}]{x,  }\item[{const float}]{y }\end{DoxyParamCaption})}
+
+Translada o ponto em (a,b), sendo a e b números reais (float). 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_point_ab99c56589bc8ad5fa5071387110a5bc7}\label{class_point_ab99c56589bc8ad5fa5071387110a5bc7}} 
+\index{Point@{Point}!x@{x}}
+\index{x@{x}!Point@{Point}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily double Point\+::x\hspace{0.3cm}{\ttfamily [protected]}}
+
+Coordenada x do plano \mbox{\Hypertarget{class_point_afa38be143ae800e6ad69ce8ed4df62d8}\label{class_point_afa38be143ae800e6ad69ce8ed4df62d8}} 
+\index{Point@{Point}!y@{y}}
+\index{y@{y}!Point@{Point}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily double Point\+::y\hspace{0.3cm}{\ttfamily [protected]}}
+
+Coordenada y do plano 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Poligonos/point.\+h\item 
+Poligonos/point.\+cpp\end{DoxyCompactItemize}

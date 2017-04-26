@@ -1,0 +1,189 @@
+\hypertarget{class_polygon}{}\section{Polygon Class Reference}
+\label{class_polygon}\index{Polygon@{Polygon}}
+
+
+Classe utilizada para representar um polígono em um plano 2D.  
+
+
+
+
+{\ttfamily \#include $<$polygon.\+h$>$}
+
+
+
+Inheritance diagram for Polygon\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{class_polygon__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_polygon_af7bc02fdd1541b49aa3f8e2006a30aad}{Polygon} (int)
+\begin{DoxyCompactList}\small\item\em Construtor alternativo. \end{DoxyCompactList}\item 
+int \hyperlink{class_polygon_a9c28d2deb649781c79a21cee4d884403}{get\+Size} ()
+\item 
+void \hyperlink{class_polygon_aa7b6a280681bf36afc977f4bd3bcc8d3}{add\+Point} (\hyperlink{class_point}{Point} p)
+\begin{DoxyCompactList}\small\item\em Adiciona um objecto Ponto como novo vértice do polígono. \end{DoxyCompactList}\item 
+void \hyperlink{class_polygon_a639bed3c0635559f7db23f4fa4e54d89}{add\+Point} (const float, const float)
+\item 
+void \hyperlink{class_polygon_a5a514d6e28bb6f5e1bccd007e75bb512}{translate} (\hyperlink{class_point}{Point} \&)
+\item 
+void \hyperlink{class_polygon_ae9ccf7a74ff5ac4dcc776d0e334d9d55}{translate} (const float, const float)
+\item 
+void \hyperlink{class_polygon_ae56a4c0d4e77bbbe8fa423ca5d33622a}{rotate} (const float, \hyperlink{class_point}{Point})
+\item 
+double \hyperlink{class_polygon_aaf8aa88f54ac596898c20261f40f77f0}{area} ()
+\item 
+\hyperlink{class_point}{Point} \hyperlink{class_polygon_a29f2c1c836f16108ea14567728cda0c2}{center} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{class_polygon_ab6ae45da59b24da7c101721dfa784690}{M\+A\+X\+\_\+\+S\+I\+ZE} = 100
+\item 
+int \hyperlink{class_polygon_aba87c61b99a3812696145bda9e3f466a}{size} = 0
+\item 
+vector$<$ \hyperlink{class_point}{Point} $>$ \hyperlink{class_polygon_a2d68fb877efd74fd52ea4dea28ea4169}{points}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_polygon_a81a0d6063bf43c894c4a3da261f66c9c}\label{class_polygon_a81a0d6063bf43c894c4a3da261f66c9c}} 
+istream \& {\bfseries operator$>$$>$} (istream \&, \hyperlink{class_polygon}{Polygon} \&)
+\item 
+\mbox{\Hypertarget{class_polygon_a78b2987525d6996d71480891f6402f3d}\label{class_polygon_a78b2987525d6996d71480891f6402f3d}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, const \hyperlink{class_polygon}{Polygon} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe utilizada para representar um polígono em um plano 2D. 
+
+\begin{DoxyDate}{Date}
+Abril, 2017
+\end{DoxyDate}
+Considere \char`\"{}tamanho\char`\"{} como sendo o número de vértices/pontos do polígono. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_polygon_af7bc02fdd1541b49aa3f8e2006a30aad}\label{class_polygon_af7bc02fdd1541b49aa3f8e2006a30aad}} 
+\index{Polygon@{Polygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{Polygon()}{Polygon()}}
+{\footnotesize\ttfamily Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Construtor alternativo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Define o tamanho do polígono. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_polygon_aa7b6a280681bf36afc977f4bd3bcc8d3}\label{class_polygon_aa7b6a280681bf36afc977f4bd3bcc8d3}} 
+\index{Polygon@{Polygon}!add\+Point@{add\+Point}}
+\index{add\+Point@{add\+Point}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{add\+Point()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Polygon\+::add\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{class_point}{Point}}]{p }\end{DoxyParamCaption})}
+
+
+
+Adiciona um objecto Ponto como novo vértice do polígono. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Ponto a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_polygon_a639bed3c0635559f7db23f4fa4e54d89}\label{class_polygon_a639bed3c0635559f7db23f4fa4e54d89}} 
+\index{Polygon@{Polygon}!add\+Point@{add\+Point}}
+\index{add\+Point@{add\+Point}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{add\+Point()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Polygon\+::add\+Point (\begin{DoxyParamCaption}\item[{const float}]{x,  }\item[{const float}]{y }\end{DoxyParamCaption})}
+
+Cria um objeto Ponto a partir dos paramêtros e o adiciona ao polígono. 
+\begin{DoxyParams}{Parameters}
+{\em x} & Coordenada x do ponto a ser adicionado. \\
+\hline
+{\em y} & Coordenada y do ponto a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_polygon_aa7b6a280681bf36afc977f4bd3bcc8d3}{add\+Point(\+Point p)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_polygon_aaf8aa88f54ac596898c20261f40f77f0}\label{class_polygon_aaf8aa88f54ac596898c20261f40f77f0}} 
+\index{Polygon@{Polygon}!area@{area}}
+\index{area@{area}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{area()}{area()}}
+{\footnotesize\ttfamily double Polygon\+::area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna a área do polígono. \mbox{\Hypertarget{class_polygon_a29f2c1c836f16108ea14567728cda0c2}\label{class_polygon_a29f2c1c836f16108ea14567728cda0c2}} 
+\index{Polygon@{Polygon}!center@{center}}
+\index{center@{center}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily \hyperlink{class_point}{Point} Polygon\+::center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna um Ponto que representa o centro de massa do polígono. \mbox{\Hypertarget{class_polygon_a9c28d2deb649781c79a21cee4d884403}\label{class_polygon_a9c28d2deb649781c79a21cee4d884403}} 
+\index{Polygon@{Polygon}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily int Polygon\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o tamanho do polígono. \mbox{\Hypertarget{class_polygon_ae56a4c0d4e77bbbe8fa423ca5d33622a}\label{class_polygon_ae56a4c0d4e77bbbe8fa423ca5d33622a}} 
+\index{Polygon@{Polygon}!rotate@{rotate}}
+\index{rotate@{rotate}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Polygon\+::rotate (\begin{DoxyParamCaption}\item[{const float}]{degrees,  }\item[{\hyperlink{class_point}{Point}}]{p }\end{DoxyParamCaption})}
+
+Rotaciona o polígono em relação à um ponto. 
+\begin{DoxyParams}{Parameters}
+{\em degrees} & O ângulo ao qual o polígono será rotacionado, em graus. \\
+\hline
+{\em p} & Ponto de referência.\+de T graus no sentido anti-\/horário em torno de um ponto. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_polygon_a5a514d6e28bb6f5e1bccd007e75bb512}\label{class_polygon_a5a514d6e28bb6f5e1bccd007e75bb512}} 
+\index{Polygon@{Polygon}!translate@{translate}}
+\index{translate@{translate}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Polygon\+::translate (\begin{DoxyParamCaption}\item[{\hyperlink{class_point}{Point} \&}]{pt }\end{DoxyParamCaption})}
+
+Translada o polígono para (+x, +y), sendo x e y as coordenadas do parâmetro. \mbox{\Hypertarget{class_polygon_ae9ccf7a74ff5ac4dcc776d0e334d9d55}\label{class_polygon_ae9ccf7a74ff5ac4dcc776d0e334d9d55}} 
+\index{Polygon@{Polygon}!translate@{translate}}
+\index{translate@{translate}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Polygon\+::translate (\begin{DoxyParamCaption}\item[{const float}]{x,  }\item[{const float}]{y }\end{DoxyParamCaption})}
+
+Translada o polígono para (+x, +y), sendo x e y os parâmetros. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_polygon_ab6ae45da59b24da7c101721dfa784690}\label{class_polygon_ab6ae45da59b24da7c101721dfa784690}} 
+\index{Polygon@{Polygon}!M\+A\+X\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+S\+I\+ZE}}
+\index{M\+A\+X\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+S\+I\+ZE}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+S\+I\+ZE}{MAX\_SIZE}}
+{\footnotesize\ttfamily const int Polygon\+::\+M\+A\+X\+\_\+\+S\+I\+ZE = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+Número máximo de vértices permitidos. \mbox{\Hypertarget{class_polygon_a2d68fb877efd74fd52ea4dea28ea4169}\label{class_polygon_a2d68fb877efd74fd52ea4dea28ea4169}} 
+\index{Polygon@{Polygon}!points@{points}}
+\index{points@{points}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily vector$<$\hyperlink{class_point}{Point}$>$ Polygon\+::points\hspace{0.3cm}{\ttfamily [protected]}}
+
+Vetor para guardar os pontos (vértices) do polígono. \mbox{\Hypertarget{class_polygon_aba87c61b99a3812696145bda9e3f466a}\label{class_polygon_aba87c61b99a3812696145bda9e3f466a}} 
+\index{Polygon@{Polygon}!size@{size}}
+\index{size@{size}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int Polygon\+::size = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+Tamanho definido do polígono. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Poligonos/polygon.\+h\item 
+Poligonos/polygon.\+cpp\end{DoxyCompactItemize}
